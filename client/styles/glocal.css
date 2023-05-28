@@ -1,0 +1,127 @@
+
+* {
+  box-sizing: border-box !important;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#__next {
+  min-height: 100vh; /* Set minimum height to 100% of viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h1,
+h2 {
+  color: #eee;
+}
+
+p,
+a,
+summary {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+p span.code {
+  font-family: monospace;
+  font-size: 80%;
+  color: #888;
+}
+
+code {
+  display: block;
+  white-space: pre-wrap;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  color: #ccc;
+  background-color: #444;
+}
+
+code span.comment {
+  color: #40ea95;
+}
+
+a:hover,
+summary:hover,
+details[open] summary {
+  color: #fff;
+}
+
+a {
+  color: #aaa;
+}
+
+summary {
+  cursor: pointer;
+}
+
+main {
+  padding: 10px 20px;
+  flex: 1;
+  color: black;
+}
+
+h1 {
+  color: black
+}
+
+main > div.ethNotReady {
+  color: red
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+  background-color: #222;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+nav ul li {
+  margin: 0px 10px;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #bbb;
+}
+
+nav ul li:hover {
+  color: #fff;
+}
+
+footer {
+  background-color: #222;
+  padding: 5px;
+}
+
+footer p {
+  font-size: 14px;
+  text-align: center;
+}
