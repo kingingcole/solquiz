@@ -8,7 +8,8 @@ interface CustomButtonProps {
     children: any;
     onClick?: () => void;
     disabled?: boolean;
-    size?: "small" | "medium" | "large"
+    size?: "small" | "medium" | "large";
+    sx?: Record<string, string | number>;
 }
 
 const CustomButton = ({ variant, color, children, onClick, ...otherProps}: CustomButtonProps) => {

@@ -176,7 +176,7 @@ export default function Home({ user, setUser }: HomeProps): JSX.Element {
       return <p style={{ fontSize: '15px' }}>There are no eligible quizzes for this user account.</p>
     }
 
-    const ratingDisabled = randomQuiz.userHasRated || eth.web3.utils.toChecksumAddress(randomQuiz.creator) === eth.account || user?.points < RATE_QUIZ_POINT_COST;
+    const ratingDisabled = randomQuiz.userHasRated || eth.web3.utils.toChecksumAddress(randomQuiz.creator) === eth.account || (user?.points && user.points < RATE_QUIZ_POINT_COST);
 
     const rateQuiz = async (rating: boolean) => {
       if (!eth.ready || !randomQuiz) return;
@@ -252,15 +252,15 @@ export default function Home({ user, setUser }: HomeProps): JSX.Element {
             </FormControl>
             <Stack sx={{ my: 2 }} direction={'row'} spacing={1} alignContent={'center'}>
               <CustomButton onClick={handleSkipClicked} disabled={quizzes.length < 2 || sendingAnswer} size='small' variant='outlined'>Skip</CustomButton>
-              <CustomButton size='small' disabled={singleQuizValue === null || sendingAnswer || getCannotAnswerReason().length} onClick={!isBatchAnswer ? handleSubmitSingleAnswer : addToBatchAnswer}>Submit</CustomButton><span style={{alignSelf: 'center'}}>{getCannotAnswerReason()}</span>
+              <CustomButton size='small' disabled={singleQuizValue === null || sendingAnswer || getCannotAnswerReason().length > 0} onClick={!isBatchAnswer ? handleSubmitSingleAnswer : addToBatchAnswer}>Submit</CustomButton><span style={{alignSelf: 'center'}}>{getCannotAnswerReason()}</span>
             </Stack>
             <small style={{color: 'grey'}}>Created by {eth.account === randomQuiz.creator ? 'You' : getTruncatedAddress(randomQuiz.creator)}</small>
             <Stack sx={{ mt: 2 }} direction={'row'} alignItems={'center'}>
               {/* rating section */}
-              <IconButton disabled={ratingDisabled} sx={{'&:hover': {color: 'green'}}} onClick={() => rateQuiz(true)}>
+              <IconButton disabled={Boolean(ratingDisabled)} sx={{'&:hover': {color: 'green'}}} onClick={() => rateQuiz(true)}>
                 <ThumbUpIcon fontSize='small'/> <small style={{ fontSize: '13px', marginLeft: '4px'}}>{randomQuiz.positiveRatings || 0}</small>
               </IconButton>
-              <IconButton disabled={ratingDisabled} sx={{'&:hover': {color: 'red'}}} onClick={() => rateQuiz(false)}>
+              <IconButton disabled={Boolean(ratingDisabled)} sx={{'&:hover': {color: 'red'}}} onClick={() => rateQuiz(false)}>
                 <ThumbDownIcon fontSize='small'/> <small style={{ fontSize: '13px', marginLeft: '4px'}}>{randomQuiz.totalRatings - randomQuiz.positiveRatings || 0}</small>
               </IconButton>
               <small>{getCannotRateReason()}</small>
