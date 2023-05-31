@@ -1,5 +1,7 @@
 "use client";
 
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import ModeIcon from '@mui/icons-material/Mode';
 import { Box, Modal, TextField } from '@mui/material';
 import { useEth } from 'eth.context';
@@ -21,6 +23,8 @@ const Navbar = ({ loading, setLoading, user, setUser }: NavbarProps) => {
     const [walletConnected, setWalletConnected] = useState(false);
     const [openModal, setOpenModal] = useState(false);
     const [displayName, setDisplayName] = useState<string | undefined>('');
+
+    const [showMenu, setShowMenu] = useState(false);
 
     useEffect(() => {
         if (eth.ready) {
@@ -82,12 +86,19 @@ const Navbar = ({ loading, setLoading, user, setUser }: NavbarProps) => {
         }
     }
 
+    const handleMenuClick = () => {
+        setShowMenu(!showMenu);
+    };
+
     const isManager = eth.ready && eth.account === eth.manager;
 
     return (
         <nav>
-            <Link href='/'>SolQuiz</Link>
-            <ul>
+            <div>
+                <Link href='/'>SolQuiz</Link>
+                <div className="menu-toggle" onClick={handleMenuClick}>{showMenu ? <CloseIcon /> : <MenuIcon />}</div>
+            </div>
+            <ul className={`${showMenu ? 'show' : ''}`}>
                 {
                     eth.ready && eth.account && (
                         <>

@@ -90,6 +90,17 @@ nav {
   background-color: #222;
 }
 
+nav > div:first-child {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white
+}
+
+.menu-toggle {
+  display: none;
+}
+
 nav a {
   text-decoration: none;
 }
@@ -99,10 +110,13 @@ nav ul {
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
+  /* width: 70%; */
 }
 
+
 nav ul li {
-  margin: 0px 10px;
+  margin: 0px 13px;
+  width: max-content;
 }
 
 nav ul li {
@@ -124,4 +138,39 @@ footer {
 footer p {
   font-size: 14px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  nav, nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    padding: 0px;
+  }
+
+  nav ul.show {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 0px 0px 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .bulk-quiz-providers-container {
+    flex-direction: column;
+  }
+
+  .bulk-quiz-provider {
+    margin: 10px 0px !important
+  }
+
 }

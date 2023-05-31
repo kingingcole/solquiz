@@ -94,13 +94,13 @@ const CreateBuilkQuiz = () => {
     }
 
     return (
-        <Box  sx={{ margin: '50px auto', maxWidth: '800px' }}>
+        <Box  sx={{ margin: '20px auto', maxWidth: '800px' }}>
             <p>Select a provider below to continue creating bulk quizzes.</p>
-            <Stack spacing={1} direction={'row'} justifyContent={'space-between'}>
+            <Stack className="bulk-quiz-providers-container" spacing={1} direction={'row'} justifyContent={'space-between'}>
                 {SUPPORTED_BULK_QUIZ_PROVIDERS.map((provider, index) => {
                     const isSelected = provider.name === selectedProvider?.name;
                     return (
-                        <Box key={index} onClick={() => {
+                        <Box className="bulk-quiz-provider" key={index} onClick={() => {
                             if (!provider.enabled) return;
                             setSelectedProvider(provider);
                             setCategory('');
