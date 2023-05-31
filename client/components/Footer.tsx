@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer>
-            <p>Copyright SolJobs, 2023.</p>
+            <p>Developed by <a href='https://coleruche.com' target="_blank">Cole Ruche</a></p>
         </footer>
     )
 }
