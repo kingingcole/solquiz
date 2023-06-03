@@ -59,8 +59,17 @@ details[open] summary {
   color: #fff;
 }
 
+.help-modal a {
+  color: #00baba !important;
+  font-size: 1rem;
+}
+
+.help-modal p {
+  margin-bottom: 15px
+}
+
 a {
-  color: #aaa;
+  color: #fff;
 }
 
 summary {
@@ -87,14 +96,18 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 5px 15px;
-  background-color: #222;
+  background-color: #e1f5fe;
 }
 
 nav > div:first-child {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: white
+  color: black
+}
+
+nav a {
+  color: black
 }
 
 .menu-toggle {
@@ -123,7 +136,7 @@ nav ul li {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: #bbb;
+  color: black;
 }
 
 nav ul li:hover {

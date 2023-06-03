@@ -20,8 +20,6 @@ interface HomeProps {
   setUser: (user: User) => null;
 }
 
-const introText = "Welcome to SolQuiz, the ultimate quiz platform powered by Ethereum! Create and answer quizzes in both single and batch modes, challenge yourself and friends, and compete for the top spot on our leaderboard. Rate and provide feedback on quizzes to shape the community's quiz-taking experience. Step into the world of SolQuiz and showcase your knowledge mastery today!"
-
 export default function Home({ user, setUser }: HomeProps): JSX.Element {
   const eth = useEth();
 
@@ -281,15 +279,6 @@ export default function Home({ user, setUser }: HomeProps): JSX.Element {
   }
 
   const router = useRouter();
-
-  if (showIntroText) {
-    return (
-      <Box sx={{ maxWidth: '800px', margin: '30px auto', textAlign: 'center' }}>
-        <p style={{ fontSize: '16px' }}>{introText}</p>
-        <CustomButton onClick={() => setShowIntroText(false)}>Begin</CustomButton>
-      </Box>
-    )
-  }
 
   return (
     <Box>

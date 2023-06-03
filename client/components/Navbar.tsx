@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import ModeIcon from '@mui/icons-material/Mode';
 import { Box, Modal, TextField } from '@mui/material';
-import { useEth } from 'eth.context';
+import { NotReadyReason, useEth } from 'eth.context';
 import { User } from 'models';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -92,6 +92,11 @@ const Navbar = ({ loading, setLoading, user, setUser }: NavbarProps) => {
 
     const isManager = eth.ready && eth.account === eth.manager;
 
+    const disableConnectWallet = 
+        !eth.ready && (
+            eth.notReadyReason === NotReadyReason.Initializing || eth.notReadyReason === NotReadyReason.NoWallet || eth.notReadyReason === NotReadyReason.WrongNetwork
+        )
+
     return (
         <nav>
             <div>
@@ -112,7 +117,7 @@ const Navbar = ({ loading, setLoading, user, setUser }: NavbarProps) => {
                     )
                 }
                 <li>
-                    {walletConnected ? <CustomButton onClick={disconnectWallet}>Disconnect Wallet</CustomButton> : <CustomButton onClick={connectWallet}>Connect Wallet</CustomButton>}
+                    {walletConnected ? <CustomButton onClick={disconnectWallet}>Disconnect Wallet</CustomButton> : <CustomButton onClick={connectWallet} disabled={disableConnectWallet}>Connect Wallet</CustomButton>}
                 </li>
             </ul>
 
