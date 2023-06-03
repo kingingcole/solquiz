@@ -59,17 +59,8 @@ details[open] summary {
   color: #fff;
 }
 
-.help-modal a {
-  color: #00baba !important;
-  font-size: 1rem;
-}
-
-.help-modal p {
-  margin-bottom: 15px
-}
-
 a {
-  color: #fff;
+  color: #aaa;
 }
 
 summary {
@@ -90,24 +81,29 @@ main > div.ethNotReady {
   color: red
 }
 
+.help-modal a {
+  color: #00baba !important;
+  font-size: 1rem;
+}
+
+.help-modal p {
+  margin-bottom: 10px
+}
+
 nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 5px 15px;
-  background-color: #e1f5fe;
+  background-color: #222;
 }
 
 nav > div:first-child {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: black
-}
-
-nav a {
-  color: black
+  color: white
 }
 
 .menu-toggle {
@@ -136,7 +132,7 @@ nav ul li {
   display: flex;
   align-items: center;
   cursor: pointer;
-  color: black;
+  color: #bbb;
 }
 
 nav ul li:hover {

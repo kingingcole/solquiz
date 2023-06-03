@@ -23,7 +23,7 @@ function HelpModal({ open, setOpen}: { open: boolean, setOpen: (open: boolean) =
               transform: 'translate(-50%, -50%)',
               width: 800,
               background: 'white',
-              padding: 8,
+              padding: 10,
             }}
           >
             <Typography variant="h5" gutterBottom>
@@ -60,7 +60,7 @@ function HelpModal({ open, setOpen}: { open: boolean, setOpen: (open: boolean) =
               .
             </Typography>
   
-            <CustomButton variant="contained" onClick={handleClose}>
+            <CustomButton size='small' variant="contained" onClick={handleClose}>
               Close
             </CustomButton>
           </div>
