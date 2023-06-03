@@ -35,7 +35,7 @@ function HelpModal({ open, setOpen}: { open: boolean, setOpen: (open: boolean) =
             </Typography>
   
             <Typography variant="body1" gutterBottom>
-              1. Run the app in a web browser with a supported wallet extension like Metamask installed. If you don't have Metamask, you can{' '}
+              1. Run the app in a web browser with a supported wallet extension like Metamask installed. If you don&apos;t have Metamask, you can{' '}
               <Link href="https://metamask.io/" target="_blank" rel="noopener">
                 install it here
               </Link>
@@ -44,7 +44,7 @@ function HelpModal({ open, setOpen}: { open: boolean, setOpen: (open: boolean) =
   
             <Typography variant="body1" gutterBottom>
               2. Switch your Metamask network to the Sepolia Test Network.
-              If you don't have the Sepolia network in Metamask, you can add it by following{' '}
+              If you don&apos;t have the Sepolia network in Metamask, you can add it by following{' '}
               <Link href="https://www.alchemy.com/overviews/how-to-add-sepolia-to-metamask" target="_blank" rel="noopener">
                 this link
               </Link>
